@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoCrypto - Crypto App</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Navigation bar -->
+      <section class="navigation">
+        <div class="nav-container">
+          <div class="brand">
+            <a href="#!"><img src="./assests/Toplogo.png" /></a>
+          </div>
+          <nav>
+            <div class="nav-mobile">
+              <a id="nav-toggle" href="#!"><span></span></a>
+            </div>
+            <ul class="nav-list">
+              <li><a href="#!">NFT</a></li>
+              <li><a href="#!">Exchanges</a></li>
+              <li><a href="#!">Portofolio</a></li>
+
+              <!-- <li>
+                <a href="#!">Services</a>
+                <ul class="nav-dropdown">
+                  <li><a href="#!">Web Design</a></li>
+                  <li><a href="#!">Web Development</a></li>
+                  <li><a href="#!">Graphic Design</a></li>
+                </ul>
+              </li> -->
+              <li><a href="#!">Product</a></li>
+              <li><a href="#!">About Us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </header>
+
+    <section class="section1">
+      <section class="container">
+        <section class="hero">
+          <!-- Hero section with CTA buttons -->
+          <h1>Make Your Crypto</h1>
+          <h1>Transcation Easier</h1>
+          <p>
+            Our intetegrated service system ensures the ease of investing in
+            Bitcoin and crypto assets.The best choice for trading bitcoin and
+            other crypto assets.
+          </p>
+          <div class="btn-group">
+            <button class="btn-blue">Get Started</button>
+            <button class="btn-transparent">How It Work</button>
+          </div>
+          <section class="large">
+            <img src="./assests/sponser.png" alt="Sponser" />
+          </section>
+        </section>
+        <section class="hero heropic">
+          <img src="./assests/Mobilewithhand.png" alt="handPhone" />
+        </section>
+        <section class="heropic small">
+          <img src="./assests/sponser.png" alt="Sponser" />
+        </section>
+      </section>
+    </section>
+    <section class="container">
+      <div class="why-us">
+        <!-- Why Us section -->
+        <div class="hero">
+          <p class="small-title">Why Us?</p>
+          <h1>The World's Fastest</h1>
+          <h1>Growing Crypto App</h1>
+        </div>
+        <div class="hero" style="padding-top: 35px">
+          <p>
+            Using this application you can get ten times more profit! Many users
+            and trust the Mocrypto apllication in doing crypto trading.Grow Your
+            portfolio by receiving rewards of up to 14.5% on your crypto assests
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <div class="benefits">
+        <!-- Benefits section -->
+        <div class="hero heropic">
+          <img src="./assests/Moneywithhand.png" alt="handPhone" />
+        </div>
+        <div class="hero">
+          <p class="small-title">Benefit with us</p>
+          <h1>Find The Benefits</h1>
+          <h1>Always Every Month</h1>
+          <ul class="benefitspoint">
+            <li>
+              <div>
+                <img src="./assests/benefitspoint.png" class="points" />
+              </div>
+              <div>
+                Jion 10m+ users buying and selling 150+ cryptocurrencies at true
+                cost
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./assests/benefitspoint.png" class="points" />
+              </div>
+
+              <div>
+                Grow your portfolio by receiving rewards up to 14.5% on your
+                crypto assests
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <img src="./assests/benefitspoint.png" class="points" />
+              </div>
+              <div>
+                Spent with the MoCrypto.com Visa Card abd get up to 8% back
+              </div>
+              >
+            </li>
+          </ul>
+          <div class="btn-group">
+            <button class="btn-blue">Trade Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="security">
+      <!-- Security section -->
+    </section>
+
+    <section class="testimonials">
+      <!-- Testimonials section -->
+    </section>
+
+    <footer>
+      <!-- Footer links and social media icons -->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var navToggle = document.getElementById("nav-toggle");
+        var navUl = document.querySelector("nav ul");
+        var navDropdowns = document.querySelectorAll(".nav-dropdown");
+
+        // Function to toggle nav dropdowns
+        function toggleNavDropdowns(event) {
+          var target = event.target;
+          if (!target.parentNode.classList.contains("nav-list")) {
+            // If clicked outside nav list, hide all nav dropdowns
+            navDropdowns.forEach(function (dropdown) {
+              dropdown.style.display = "none";
+            });
+          }
+        }
+
+        // Function to toggle nav menu
+        function toggleNavMenu(event) {
+          navUl.style.display =
+            navUl.style.display === "block" ? "none" : "block";
+          navToggle.classList.toggle("active");
+        }
+
+        // Event listeners
+        navToggle.addEventListener("click", toggleNavMenu);
+        document.addEventListener("click", toggleNavDropdowns);
+
+        // Event listener for nav links with dropdowns
+        document
+          .querySelectorAll("nav ul li > a:not(:only-child)")
+          .forEach(function (link) {
+            link.addEventListener("click", function (event) {
+              var dropdown = this.nextElementSibling;
+              dropdown.style.display =
+                dropdown.style.display === "block" ? "none" : "block";
+              // Hide other dropdowns
+              navDropdowns.forEach(function (d) {
+                if (d !== dropdown) {
+                  d.style.display = "none";
+                }
+              });
+              event.stopPropagation();
+            });
+          });
+      });
+    </script>
+  </body>
+</html>
